@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function myFun(){
+				if(window.localStorage !== "undefined"){
+					//document.write("您的浏览器支持HTML5本地存储(web存储)");
+					if(localStorage.clickCount){
+						localStorage.clickCount = Number(localStorage.clickCount)+1;
+					}else{
+						localStorage.clickCount = 1;
+					}
+					document.getElementById("demo").innerHTML = localStorage.clickCount;
+				}else{
+					document.getElementById("demo").innerHTML = "您的浏览器不支持HTML5本地存储(web存储)";
+					
+					//document.write("您的浏览器不支持HTML5本地存储(web存储)");
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="myFun()">累计数值</button>
+		<div id="demo"></div>
+	</body>
+</html>
